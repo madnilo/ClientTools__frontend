@@ -4,29 +4,22 @@ import styled from 'styled-components'
 import EquivalentItem from './EquivalentItem';
 
 function PartDetails(props) {
-    if (!props.part) return <div data-testid='loading' /> //TODO retornar loading
+    if (!props.part) return <Container data-testid='loading'>Loading...</Container>
 
     const { title, description, partNo, manufacter, condition, genuine, price, equivalents } = props.part
     return (
         <Container>
-
             <Details>
                 <Title>{title}</Title>
-
                 <img src="http://placekitten.com/300/300" />
-
                 <p>{description}</p>
-
                 <p>Part No.: {partNo} / Genuine: {genuine ? 'yes' : 'no'}</p>
-
                 <p>Manufacter: {manufacter} / Condition: {condition}</p>
             </Details>
-
             <Cards>
                 <Subtitle>Equivalent Parts</Subtitle>
                 {equivalents.map((item, index) => <EquivalentItem item={item} key={index} />)}
             </Cards>
-
         </Container>
     )
 }

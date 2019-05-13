@@ -1,24 +1,25 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const ResultItem = (props) => {
-    const { title, manufacter, genuine, price, condition } = props.item
+    const { id, title, manufacter, genuine, price, condition } = props.item
     return (
-        <Container>
-            <CardImage src="http://placekitten.com/200/120" alt="Item image" />
+        <StyledLink to={{pathname: `/details`, search: `?id=${id}` }} key={id} >
+            <CardImage src="http://placekitten.com/140/100" alt="Item image" />
             <CardDetails>
                 <Title>{title}</Title>
                 <Info>{`${manufacter}, ${condition}, ${genuine ? '' : 'non '}genuine`}</Info>
                 <Price>{price}</Price>
             </CardDetails>
-        </Container>
+        </StyledLink>
     )
 }
 
 export default ResultItem
 
 
-const Container = styled.div`
+const StyledLink = styled(Link)`
     display: flex;
     align-items: center;
     @media(${props => props.theme.mobileScreen}){
@@ -40,7 +41,7 @@ const Container = styled.div`
 `
 
 const CardImage = styled.img`
-    width: 120px;
+    width: 140px;
     height: 100px;
 `
 

@@ -9,8 +9,19 @@ const getPartsFinish = (data) => ({
     data
 })
 
+const getPartDetailsStart = () => ({
+    type: types.GET_PART_DETAILS_REQUEST,
+})
+
+const getPartDetailsFinish = (data) => ({
+    type: types.GET_PART_DETAILS_RESPONSE,
+    data
+})
+
 export default {
     getPartsStart,
     getPartsFinish,
+    getPartDetailsStart,
+    getPartDetailsFinish,
 
 }

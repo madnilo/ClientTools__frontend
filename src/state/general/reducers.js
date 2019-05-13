@@ -16,3 +16,14 @@ export const partsReducer = (state = genericState, action) => {
             return state
     }
 }
+
+export const partDetailsReducer = (state = genericState, action) => {
+    switch (action.type) {
+        case types.GET_PART_DETAILS_REQUEST:
+            return { success: false, loading: true, data: null }
+        case types.GET_PART_DETAILS_RESPONSE:
+            return { success: !!action.data.length, loading: false, data: action.data }
+        default:
+            return state
+    }
+}

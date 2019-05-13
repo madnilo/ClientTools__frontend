@@ -3,7 +3,7 @@ import Results from './Results'
 import { connect } from 'react-redux'
 import operations from '../../state/general/operations'
 
-class ContentContainer extends React.PureComponent {
+class ResultsContainer extends React.PureComponent {
 
     render() {
         const { data } = this.props
@@ -27,4 +27,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ContentContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(ResultsContainer)

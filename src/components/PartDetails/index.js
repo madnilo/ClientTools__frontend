@@ -5,7 +5,7 @@ import operations from '../../state/general/operations'
 
 class PartDetailsContainer extends Component {
     componentDidMount(){
-        this.props.getPartDetails()
+        this.props.getPartDetails("1111-aaaa")
     }
 
     goBack = () => {
@@ -32,7 +32,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        getPartDetails: () => dispatch(operations.getPartDetails())
+        getPartDetails: (id) => dispatch(operations.getPartDetails(id))
     }
 }
 

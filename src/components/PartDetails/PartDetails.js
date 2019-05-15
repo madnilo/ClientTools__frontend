@@ -6,15 +6,15 @@ import EquivalentItem from './EquivalentItem';
 function PartDetails(props) {
     if (!props.part) return <Container data-testid='loading'>Loading...</Container>
 
-    const { title, description, partNo, manufacter, condition, genuine, price, equivalents } = props.part
+    const { title, image, description, partNo, manufacter, condition, genuine, price, equivalents } = props.part
     return (
         <Container>
             <Details>
                 <Title>{title}</Title>
-                <img src="https://loremflickr.com/cache/resized/3878_32648358364_d7d87b0535_320_240_nofilter.jpg" />
+                <img src={image} alt="Car part"/>
                 <p>{description}</p>
                 <p>Part No.: {partNo} / Genuine: {genuine ? 'yes' : 'no'}</p>
-                <p>Manufacter: {manufacter} / Condition: {condition}</p>
+                <p>Manufacter: {manufacter} / Condition: {condition} / Price {price} </p>
             </Details>
             <Cards>
                 <Subtitle>Equivalent Parts</Subtitle>

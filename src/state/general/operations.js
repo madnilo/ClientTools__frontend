@@ -1,48 +1,7 @@
 import actions from './actions'
 import { Http } from '../_services/Http'
 
-const details = {
-    id: '12323213-adad1',
-    title: "Mazda RX-8 Front Bumber",
-    price: '$70',
-    partNo: '2343-WEO3',
-    manufacter: 'Mazda',
-    condition: 'New',
-    genuine: 'false',
-    description: 
-        `Dolor in cillum amet pariatur incididunt. Ut aute ea cillum sunt cillum nostrud incididunt tempor do qui. Elit culpa ad aliqua cupidatat nulla.
-        Laborum id fugiat veniam nulla dolore. Culpa quis eiusmod minim eiusmod ex voluptate amet irure irure velit. Consectetur proident non in in cillum pariatur aute. Aute cillum irure aliqua laborum pariatur nulla est esse ex esse irure magna pariatur. Sit eiusmod elit proident laborum nostrud in. Ullamco officia minim esse exercitation proident labore qui. In aute aliqua eu consequat laboris ut commodo non.`,
-    equivalents: [
-        {
-            id: '12323213-adad1',
-            title: "Mazda RX-8 Front Bumber",
-            price: '$70',
-            partNo: '2343-WEO3',
-            manufacter: 'Mazda',
-            condition: 'New',
-            genuine: 'false'
-        },
-        {
-            id: '12323213-adad1',
-            title: "Mazda RX-8 Front Bumber",
-            price: '$70',
-            partNo: '2343-WEO3',
-            manufacter: 'Mazda',
-            condition: 'New',
-            genuine: 'false'
-        },
-        {
-            id: '12323213-adad1',
-            title: "Mazda RX-8 Front Bumber",
-            price: '$70',
-            partNo: '2343-WEO3',
-            manufacter: 'Mazda',
-            condition: 'New',
-            genuine: 'false'
-        },    
-    ]
-}
-const results = [
+const mockResults = [
     {
         id: '12323213-adad1',
         title: "Mazda RX-8 Front Bumber",
@@ -228,20 +187,22 @@ const results = [
 
 const getParts = (term, searchType) => (dispatch, getState) => {
     dispatch(actions.getPartsStart())
-    //TODO request results from server
-    //TODO put results in variable results
-    //TODO remove mocked data
-    dispatch(actions.getPartsFinish(results))
+
+    if(searchType === 'title') {
+        dispatch(actions.getPartsFinish(mockResults))
+        return;
+    }
+    Http.get(`/parts/${term}/compatible`).then(result => dispatch(actions.getPartsFinish(result.data)))
+
+    
 
 }
 
 const getPartDetails = (id) => (dispatch, getState) => {
     dispatch(actions.getPartDetailsStart())
-    //TODO request part details from server
-    //TODO put results in variable details
-    //TODO remove mocked data
-    dispatch(actions.getPartDetailsFinish(details))
 
+    Http.get(`/parts/${id}/details`)
+    .then(result => dispatch(actions.getPartDetailsFinish(result.data)))
 }
 
 export default {

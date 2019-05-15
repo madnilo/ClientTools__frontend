@@ -6,7 +6,7 @@ const ResultItem = (props) => {
     const { id, title, manufacter, genuine, price, condition } = props.item
     return (
         <StyledLink to={{pathname: `/details`, search: `?id=${id}` }} key={id} >
-            <CardImage src="http://placekitten.com/140/100" alt="Item image" />
+            <CardImage src="https://loremflickr.com/140/100/toyota" alt="Item image" />
             <CardDetails>
                 <Title>{title}</Title>
                 <Info>{`${manufacter}, ${condition}, ${genuine ? '' : 'non '}genuine`}</Info>

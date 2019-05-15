@@ -11,7 +11,7 @@ function PartDetails(props) {
         <Container>
             <Details>
                 <Title>{title}</Title>
-                <img src="http://placekitten.com/300/300" />
+                <img src="https://loremflickr.com/cache/resized/3878_32648358364_d7d87b0535_320_240_nofilter.jpg" />
                 <p>{description}</p>
                 <p>Part No.: {partNo} / Genuine: {genuine ? 'yes' : 'no'}</p>
                 <p>Manufacter: {manufacter} / Condition: {condition}</p>

@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 const ResultItem = (props) => {
-    const { id, title, manufacter, genuine, price, condition } = props.item
+    const { title, partNo, thumbnail, manufacter, genuine, price, condition } = props.item
     return (
-        <StyledLink to={{pathname: `/details`, search: `?id=${id}` }} key={id} >
-            <CardImage src="https://loremflickr.com/140/100/toyota" alt="Item image" />
+        <StyledLink to={{pathname: `/details`, search: `?id=${partNo}` }} >
+            <CardImage src={thumbnail} alt="Item image" />
             <CardDetails>
                 <Title>{title}</Title>
                 <Info>{`${manufacter}, ${condition}, ${genuine ? '' : 'non '}genuine`}</Info>

@@ -10,7 +10,7 @@ const Results = (props) => {
                 props.results
                     ? (<DefaultContainer>
                         <Title>Results</Title>
-                        {props.results.map((item) => <ResultItem item={item} key={item.id}/> )}
+                        {props.results.map((item) => <ResultItem item={item} key={item.partNo}/> )}
                     </DefaultContainer>)
                     : (<EmptyContainer>
                         <p data-testid="no-results">Use the search to look for parts.</p>

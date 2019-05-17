@@ -6,8 +6,8 @@ import operations from '../../state/general/operations'
 class ResultsContainer extends React.PureComponent {
 
     render() {
-        const { data } = this.props
-        return (<Results results={data}/>)
+        const { data, success } = this.props
+        return (<Results results={data} error={!success}/>)
     }
 }
 

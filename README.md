@@ -1,6 +1,6 @@
-# ClientTools-frontend
+# ClientTools__frontend
 
-This is a React application bootstraped with `create-react-app` to serve as UI for ClientTools sample API.
+This is a sample React & Redux application bootstraped with `create-react-app` to serve as UI for ClientTools REST API (github.com/madnilo/ClientTools__backend).
 
 ### Running the app
 
@@ -18,11 +18,11 @@ This command will run `jest` in watch mode. Every change to relevant files will 
 
 ### TDD
 
-The webapp was built using TDD practices. Unit tests were applied in the parts that makes sense (UI, business logic). Integration tests were applied with specific nodes of the tree that combine other components. Functional tests could be applied with libraries like Cypress, Selenium, etc. These kinds of tests would cover the part where TDD would be too much problem (Side effects, API integration, Use cases, etc). Exploration tests are also mandatory in a real team.
+The webapp was built using TDD practices. Unit tests were applied in the parts that makes sense (UI, business logic). Integration tests were applied with specific nodes of the tree that combine other components. Functional tests could be applied with libraries like Cypress, Selenium, etc. These kinds of tests would cover the part where TDD would be too cumbersome (Side effects, API integration, Use cases, etc). Exploration tests are also mandatory in a real team.
 
 ### Type-checking
 
-The app was build using vanilla ES6, and `prop-types` library was used to create type checking for the components integration. `Flow` and Typescript could also be an alternative.
+The app was built using vanilla ES6, and `prop-types` library was used to create type checking for the components integration. `Flow` and Typescript could also be an alternative.
 
 ### Responsiviness
 

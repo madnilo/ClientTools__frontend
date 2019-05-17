@@ -7,14 +7,22 @@ const Results = (props) => {
     return (
         <div data-testid="results">
             {
-                props.results
-                    ? (<DefaultContainer>
-                        <Title>Results</Title>
-                        {props.results.map((item) => <ResultItem item={item} key={item.partNo}/> )}
-                    </DefaultContainer>)
-                    : (<EmptyContainer>
+                !props.results
+                    ?
+                    (<EmptyContainer>
                         <p data-testid="no-results">Use the search to look for parts.</p>
                     </EmptyContainer>)
+                    :
+                    props.results.length
+                        ?
+                        (<DefaultContainer>
+                            <Title>Results</Title>
+                            {props.results.map((item) => <ResultItem item={item} key={item.partNo} />)}
+                        </DefaultContainer>)
+                        : 
+                        (<DefaultContainer>
+                            <Title>No Results</Title>
+                        </DefaultContainer>)
             }
 
         </div>
